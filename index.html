@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Guidelines</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Rubik+Iso&display=swap" rel="stylesheet">
+
+<style>
+body {
+  margin: 0;
+  font-family: "Rubik Iso", system-ui;
+  transition: background 0.4s, color 0.4s;
+}
+
+/* 🤍 LIGHT MODE */
+body.light {
+  background: #f5f5f2;
+  color: #111;
+}
+
+/* 🌑 DARK MODE */
+body.dark {
+  background: #0b0b0b;
+  color: #eee;
+}
+
+/* 🖋️ texture */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: url("https://www.transparenttextures.com/patterns/paper-fibers.png");
+  opacity: 0.2;
+  pointer-events: none;
+}
+
+/* toggle button */
+.toggle {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 8px 12px;
+  border: 1px solid currentColor;
+}
+
+/* layout */
+
+
+/* side nav */
+.side-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 220px;
+  padding: 40px 18px;
+  background: rgba(255,255,255,0.95);
+  border-right: 1px solid rgba(0,0,0,0.12);
+  backdrop-filter: blur(14px);
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+body.light .side-nav {
+  background: rgba(245,245,242,0.95);
+}
+
+body.dark .side-nav {
+  background: rgba(11,11,11,0.92);
+  border-color: rgba(255,255,255,0.16);
+}
+
+.side-nav .nav-title {
+  font-size: 12px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  opacity: 0.65;
+  margin-bottom: 10px;
+}
+
+.side-nav a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 10px 14px;
+  border: 1px solid currentColor;
+  border-radius: 8px;
+  text-decoration: none;
+  color: inherit;
+  font-size: 15px;
+  transition: transform 0.2s ease, background 0.2s ease, opacity 0.2s ease;
+}
+
+.side-nav a:hover {
+  background: rgba(0,0,0,0.04);
+  transform: translateX(4px);
+  opacity: 0.9;
+}
+
+
+
+body {
+  padding-left: 240px;
+}
+
+.back {
+  left: 240px !important;
+}
+
+@media (max-width: 768px) {
+  .side-nav {
+    width: 100%;
+    height: auto;
+    bottom: auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px 12px;
+    border-right: none;
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+  }
+  .side-nav .nav-title {
+    display: none;
+  }
+  body {
+    padding-left: 0;
+    padding-top: 120px;
+  }
+  .container {
+    padding-top: 40px;
+  }
+  .back {
+    left: 20px;
+  }
+}
+
+.container {
+  max-width: 900px;
+  margin: auto;
+  min-height: calc(100vh - 40px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 200px 20px;
+  text-align: center;
+}
+
+.title {
+  font-size: 56px;
+  margin-bottom: 100px;
+  letter-spacing: 4px;
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 36px;
+    margin-bottom: 60px;
+  }
+  
+  .nav-link {
+    font-size: 18px;
+    padding: 10px 16px;
+  }
+}
+
+.nav-links {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  align-items: center;
+}
+
+.nav-link {
+  opacity: 0;
+  transform: translateY(20px);
+  filter: blur(4px);
+  transition: all 0.6s ease;
+  font-size: 24px;
+  cursor: pointer;
+  border: 1px solid currentColor;
+  padding: 12px 20px;
+  width: fit-content;
+  letter-spacing: 2px;
+}
+
+.nav-link.show {
+  opacity: 0.8;
+  transform: translateY(0);
+  filter: blur(0);
+}
+
+.nav-link:hover {
+  opacity: 1;
+  transform: translateY(-5px);
+}
+
+.footer {
+  text-align: center;
+  font-size: 14px;
+  opacity: 0.75;
+  margin-top: 40px;
+  padding-bottom: 20px;
+}
+</style>
+
+<link rel="stylesheet" href="mobile.css">
+
+
+<div class="side-nav">
+  <div class="nav-title">menu</div>
+  <a href='/'>home</a>
+  <a href='/tracklist'>tracklist</a>
+  <a href='/artwork'>artwork</a>
+  <a href='/socials'>socials</a>
+</div>
+
+
+<div class="toggle" onclick="toggleMode()">toggle</div>
+
+<div class="container">
+
+  <div class="title">guidelines</div>
+
+  <div class="nav-links">
+    <div class="nav-link" onclick="goTo('tracklist.html')">tracklist</div>
+    <div class="nav-link" onclick="goTo('artwork.html')">artwork</div>
+    <div class="nav-link" onclick="goTo('socials.html')">socials</div>
+  </div>
+
+  <footer class="footer">made by kijote 2026</footer>
+
+</div>
+
+<script>
+const links = document.querySelectorAll('.nav-link');
+
+function reveal() {
+  links.forEach((link, index) => {
+    setTimeout(() => {
+      link.classList.add('show');
+    }, index * 100);
+  });
+}
+
+function toggleMode() {
+  document.body.classList.toggle("dark");
+  document.body.classList.toggle("light");
+}
+
+function goTo(page) {
+  window.location.href = page;
+}
+
+// Reveal links on load
+window.addEventListener('load', reveal);
+
+</script>
+
+</body>
+</html>
