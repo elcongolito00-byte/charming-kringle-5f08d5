@@ -20,10 +20,10 @@ Then open http://localhost:8000.
 - `tracklist.html` and `track1.html` through `track16.html`: track pages
 - `artwork.html`, `socials.html`, `song_page.html`: supporting pages
 - `mobile.css`, `wmp-player.css`, `wmp-player.js`: styling and player behavior
-- `bg.jpg`, `mixtape-artwork.png`: artwork
+- The artwork image is embedded directly in `artwork.html`
 
 ## Media and recovery notes
 
-Recovered from the published Netlify Drop deployment on 20 November 2026. This repository contains the deployed HTML, CSS, JavaScript and image assets, not an earlier authoring history.
+Recovered from the published Netlify Drop deployment on 20 November 2026. This repository contains the deployed HTML, CSS, JavaScript and embedded artwork, not an earlier authoring history.
 
-The two original `.mov` videos remain hosted on the live Netlify site. Video references use those live URLs so the repository stays small and works without committing large media files. They are not included in this repository. The live Netlify deployment has not been changed.
+The unused background image is not included. The two original `.mov` videos remain hosted on the live Netlify site. Video references use those live URLs so the repository stays small and works without committing large media files. They are not included in this repository. The live Netlify deployment has not been changed.
