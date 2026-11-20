@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Track 8</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Rubik+Iso&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="wmp-player.css">
+
+<style>
+body {
+  margin: 0;
+  font-family: "Rubik Iso", system-ui;
+  background: #f5f5f2;
+  color: #111;
+  transition: 0.4s;
+}
+
+/* texture */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: url("https://www.transparenttextures.com/patterns/paper-fibers.png");
+  opacity: 0.2;
+  pointer-events: none;
+}
+
+
+
+/* side nav */
+.side-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 220px;
+  padding: 40px 18px;
+  background: rgba(255,255,255,0.95);
+  border-right: 1px solid rgba(0,0,0,0.12);
+  backdrop-filter: blur(14px);
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+body.light .side-nav {
+  background: rgba(245,245,242,0.95);
+}
+
+body.dark .side-nav {
+  background: rgba(11,11,11,0.92);
+  border-color: rgba(255,255,255,0.16);
+}
+
+.side-nav .nav-title {
+  font-size: 12px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  opacity: 0.65;
+  margin-bottom: 10px;
+}
+
+.side-nav a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 10px 14px;
+  border: 1px solid currentColor;
+  border-radius: 8px;
+  text-decoration: none;
+  color: inherit;
+  font-size: 15px;
+  transition: transform 0.2s ease, background 0.2s ease, opacity 0.2s ease;
+}
+
+.side-nav a:hover {
+  background: rgba(0,0,0,0.04);
+  transform: translateX(4px);
+  opacity: 0.9;
+}
+
+
+
+body {
+  padding-left: 240px;
+}
+
+.back {
+  left: 240px !important;
+}
+
+@media (max-width: 768px) {
+  .side-nav {
+    width: 100%;
+    height: auto;
+    bottom: auto;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px 12px;
+    border-right: none;
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+  }
+  .side-nav .nav-title {
+    display: none;
+  }
+  body {
+    padding-left: 0;
+    padding-top: 120px;
+  }
+  .container {
+    padding-top: 40px;
+  }
+  .back {
+    left: 20px;
+  }
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
+  padding: 120px 20px;
+  text-align: center;
+}
+
+.title {
+  font-size: 36px;
+  margin-bottom: 40px;
+}
+
+.desc {
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 60px;
+}
+
+/* player */
+iframe {
+  width: 100%;
+  height: 80px;
+  border: none;
+}
+
+/* back button */
+.back {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  cursor: pointer;
+  border: 1px solid #111;
+  padding: 6px 10px;
+}
+
+/* nav buttons */
+.prev, .next {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+  border: 1px solid #111;
+  padding: 6px 10px;
+}
+
+.next {
+  top: 60px;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 100px 20px 120px;
+  }
+  
+  .title {
+    font-size: 28px;
+    margin-bottom: 30px;
+  }
+  
+  .desc {
+    font-size: 16px;
+    margin-bottom: 40px;
+  }
+  
+  .back, .prev, .next {
+    font-size: 12px;
+    padding: 6px 10px;
+  }
+  
+  .next {
+    top: 50px;
+  }
+}
+</style>
+
+<link rel="stylesheet" href="mobile.css">
+
+</head>
+
+<body>
+
+<div class="side-nav">
+  <div class="nav-title">menu</div>
+  <a href='/'>home</a>
+  <a href='/tracklist'>tracklist</a>
+  <a href='/artwork'>artwork</a>
+  <a href='/socials'>socials</a>
+</div>
+
+
+<div class="back" onclick="goBack()">back</div>
+
+<div class="prev" onclick="window.location.href='track7.html'">previous</div>
+
+<div class="next" onclick="window.location.href='track9.html'">next</div>
+
+<div class="container">
+
+  <div class="title">8. escandalosa</div>
+
+  <div class="wmp-player" data-video="">
+    <div class="wmp-titlebar">
+      <span>guidelines — <span class="wmp-track-title"></span></span>
+      <div class="wmp-window-btns"><i></i><i></i><i></i></div>
+    </div>
+    <div class="wmp-screen">
+      <video playsinline preload="metadata"></video>
+      <div class="wmp-placeholder"></div>
+    </div>
+    <div class="wmp-infobar">
+      <i class="wmp-info-icon">i</i>
+      <span class="wmp-time">0:00 / 0:00</span>
+    </div>
+    <div class="wmp-controls">
+      <div class="wmp-controls-left">
+        <button type="button" class="wmp-btn wmp-btn-shuffle" aria-label="shuffle">⇄</button>
+        <button type="button" class="wmp-btn wmp-btn-repeat" aria-label="repeat">↻</button>
+      </div>
+      <div class="wmp-controls-center">
+        <button type="button" class="wmp-btn wmp-btn-rewind" aria-label="rewind 10s">«</button>
+        <button type="button" class="wmp-btn wmp-btn-play" aria-label="play"></button>
+        <button type="button" class="wmp-btn wmp-btn-forward" aria-label="forward 10s">»</button>
+      </div>
+      <div class="wmp-controls-right">
+        <button type="button" class="wmp-btn wmp-btn-stop" aria-label="stop">■</button>
+        <div class="wmp-volume">
+          <span class="wmp-volume-icon">♪</span>
+          <input type="range" min="0" max="100" value="80" aria-label="volume">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="desc">
+    A gradual descent into oblivion, where time erodes everything, symbolizing inevitable change and loss.
+  </div>
+
+  <iframe src="https://open.spotify.com/embed/track/EXAMPLE8"></iframe>
+
+</div>
+
+<script>
+function goBack() {
+  window.location.href = "tracklist.html";
+}
+
+</script>
+
+<script src="wmp-player.js"></script>
+
+</body>
+</html>
