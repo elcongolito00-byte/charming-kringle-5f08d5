@@ -1,0 +1,224 @@
+.wmp-player {
+  width: 100%;
+  max-width: 640px;
+  margin: 0 auto 48px;
+  border: 1px solid currentColor;
+  font-family: "Rubik Iso", system-ui;
+  letter-spacing: 1px;
+  text-align: left;
+}
+
+.wmp-titlebar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 14px;
+  border-bottom: 1px solid currentColor;
+  font-size: 11px;
+  letter-spacing: 0.25em;
+  text-transform: lowercase;
+}
+
+.wmp-titlebar span {
+  opacity: 0.85;
+}
+
+.wmp-window-btns {
+  display: flex;
+  gap: 6px;
+}
+
+.wmp-window-btns i {
+  display: block;
+  width: 10px;
+  height: 10px;
+  border: 1px solid currentColor;
+  opacity: 0.5;
+}
+
+.wmp-screen {
+  background: #000;
+  aspect-ratio: 16 / 9;
+  position: relative;
+}
+
+.wmp-screen video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.wmp-placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(255, 255, 255, 0.35);
+  font-size: 13px;
+  letter-spacing: 0.2em;
+  text-transform: lowercase;
+  pointer-events: none;
+}
+
+.wmp-screen.has-video .wmp-placeholder {
+  display: none;
+}
+
+.wmp-infobar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 14px;
+  border-bottom: 1px solid currentColor;
+  font-size: 11px;
+  letter-spacing: 0.15em;
+}
+
+body.light .wmp-infobar {
+  background: rgba(0, 0, 0, 0.03);
+}
+
+body.dark .wmp-infobar {
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.wmp-info-icon {
+  width: 18px;
+  height: 18px;
+  border: 1px solid currentColor;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-style: normal;
+  opacity: 0.7;
+}
+
+.wmp-time {
+  opacity: 0.65;
+  font-variant-numeric: tabular-nums;
+}
+
+.wmp-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 16px;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+body.light .wmp-controls {
+  background: rgba(0, 0, 0, 0.02);
+}
+
+body.dark .wmp-controls {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.wmp-controls-left,
+.wmp-controls-center,
+.wmp-controls-right {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.wmp-controls-center {
+  flex: 1;
+  justify-content: center;
+}
+
+.wmp-btn {
+  border: 1px solid currentColor;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+  padding: 7px 9px;
+  font-family: inherit;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  transition: background 0.2s ease, opacity 0.2s ease;
+}
+
+.wmp-btn:hover {
+  background: rgba(127, 127, 127, 0.12);
+}
+
+.wmp-btn:active {
+  opacity: 0.7;
+}
+
+.wmp-btn.active {
+  background: rgba(127, 127, 127, 0.18);
+}
+
+.wmp-btn-play {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 2px solid currentColor;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  margin: 0 4px;
+}
+
+.wmp-btn-play svg {
+  width: 14px;
+  height: 14px;
+  fill: currentColor;
+  margin-left: 2px;
+}
+
+.wmp-btn-play.is-playing svg {
+  margin-left: 0;
+}
+
+.wmp-volume {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.wmp-volume-icon {
+  font-size: 11px;
+  opacity: 0.7;
+  letter-spacing: 0;
+}
+
+.wmp-volume input[type="range"] {
+  width: 72px;
+  accent-color: currentColor;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .wmp-player {
+    max-width: 100%;
+  }
+
+  .wmp-controls {
+    justify-content: center;
+    padding-inline: 12px;
+  }
+
+  .wmp-controls-left,
+  .wmp-controls-right {
+    display: none;
+  }
+
+  .wmp-titlebar,
+  .wmp-infobar {
+    padding-inline: 12px;
+  }
+
+  .wmp-volume input[type="range"] {
+    width: 56px;
+  }
+}
